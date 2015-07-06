@@ -13,3 +13,8 @@ router.get('/quizes/question', quizController.question);
 router.get('/quizes/answer', quizController.answer);
 
 module.exports = router;
+
+// Authors page
+router.get('/author', function(req, res) {
+res.render('author');
+});
