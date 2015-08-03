@@ -24,7 +24,6 @@ exports.answer = function (req, res){
 
 //@ch /quizes & /quizes/?search=..
 exports.quiz = function(req, res) {
-	console.log("exports.quiz:" + req.query.search);
 	if (req.query.search == null) { //@ch I did not use a triple = 
         res.render('quizes/quiz');
 	}

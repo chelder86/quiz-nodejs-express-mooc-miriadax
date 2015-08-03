@@ -44,12 +44,12 @@ sequelize.sync().success(function() {
 				pregunta: 'Capital de Italia',
 				respuesta: 'Roma'
 			})
-			.success(function(){console.log('Base de datos inicializada')});
+			.success(function(){console.log('Base de datos inicializada. Italia dentro')});
 			Quiz.create({
 				pregunta: 'Capital de Polonia',
 				respuesta: 'Varsovia'
 			})
-			.success(function(){console.log('Base de datos inicializada')});
+			.success(function(){console.log('Base de datos inicializada. Polonia dentro')});
 		};
 	});
 });
