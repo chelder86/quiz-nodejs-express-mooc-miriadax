@@ -18,6 +18,9 @@ router.get('/quizes/answer', quizController.answer);
 
 router.get('/quizes/', quizController.quiz);
 
+router.get('/quizes/new', quizController.new);
+router.post('/quizes/create', quizController.create);
+
 module.exports = router;
 
 // Authors page
