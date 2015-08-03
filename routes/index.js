@@ -12,9 +12,16 @@ router.get('/', function(req, res) {
 router.get('/quizes/question', quizController.question);
 router.get('/quizes/answer', quizController.answer);
 
+// console.log('antes de /quizes/search');
+// router.get('/quizes/?search', quizController.search);
+// console.log('después de /quizes/:search');
+
+router.get('/quizes/', quizController.quiz);
+
 module.exports = router;
 
 // Authors page
 router.get('/author', function(req, res) {
-res.render('author');
+	res.render('author');
 });
+

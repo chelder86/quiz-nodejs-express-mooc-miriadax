@@ -20,3 +20,19 @@ exports.answer = function (req, res){
 		}
 	})
 };
+
+
+//@ch /quizes & /quizes/?search=..
+exports.quiz = function(req, res) {
+	console.log("exports.quiz:" + req.query.search);
+	if (req.query.search == null) { //@ch I did not use a triple = 
+        res.render('quizes/quiz');
+	}
+	else {
+		models.Quiz.findAll({where: ["pregunta like ?", "%" + req.query.search + "%"]}).success(function(result) {
+			res.render('quizes/search', {encontrados: result});
+		});		
+	};
+};
+
+
