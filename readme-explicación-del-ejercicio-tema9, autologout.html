@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="20150804;0">
+	<meta name="changed" content="20150804;143432178182663">
+	<style type="text/css">
+	<!--
+		@page { margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 120% }
+	-->
+	</style>
+</head>
+<body lang="es-ES" dir="ltr" style="background: transparent">
+<p style="margin-bottom: 0in; line-height: 100%">Modulo 9. Proyecto
+Quiz IV: Creación y Moderación de Comentarios a Quizes; Relaciones
+entre Tablas de la Base de Datos; Sesiones, Autenticación y
+Autorización; HTTP Seguro (HTTPS)</p>
+<p style="margin-bottom: 0in; line-height: 100%">Ejercicio P2P
+Obligatorio</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">Explicación de la
+tarea</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">Añadir <span style="background: #ffff00">auto-logout</span>
+de sesión</p>
+<p style="margin-bottom: 0in; line-height: 100%">Se pide añadir a la
+gestión de sesiones un mecanismo de autologout, de forma que si un
+usuario está <font color="#6666ff">inactivo</font> (sin enviar
+ninguna solicitud HTTP) <font color="#6666ff">más de 2 minutos</font>,
+la sesión se desconecte y <span style="background: #ffff00">deba
+volver a autenticarse para continuar</span>.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">Para implementar
+esta funcionalidad se recomienda añadir un <font color="#6666ff">middleware
+de auto-logout en app.js</font> que <span style="background: #ffff00">guarde
+en cada transacción la hora del reloj del sistema en una variable de
+la sesión a la que está asociada</span>. El middleware debe
+comprobar en cada transacción con una sesión activa si la han
+transcurrido más de 2 minutos desde la transacción anterior en
+dicha sesión, en cuyo caso destruirá la sesión.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">Una vez realizados
+los cambios, debe guardarse una nueva versión (commit).</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font color="#6666ff"><span style="background: #ffff00">Ampliación
+opcional</span></font><font color="#6666ff">:</font> Añadir una
+página de <font color="#6666ff">estadisticas</font></p>
+<p style="margin-bottom: 0in; line-height: 100%">Las personas
+interesadas en practicar más con express y MVC, pueden añadir una
+página de estadisticas. La página de estadisticas estará accesible
+directamente desde la barra de navegación y <font color="#6666ff">mostrará
+las siguientes informaciones extraidas de la base de datos</font>:</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">El número de
+preguntas</p>
+<p style="margin-bottom: 0in; line-height: 100%">El número de
+comentarios totales</p>
+<p style="margin-bottom: 0in; line-height: 100%">El número medio de
+comentarios por pregunta</p>
+<p style="margin-bottom: 0in; line-height: 100%">El número de
+preguntas sin comentarios</p>
+<p style="margin-bottom: 0in; line-height: 100%">El número de
+preguntas con comentarios</p>
+<p style="margin-bottom: 0in; line-height: 100%">Para implementar
+esta funcionalidad habra que crear una nueva entrada en el interfaz
+REST de quizes asociada a la ruta</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">GET
+/quizes/statistics</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">Además habra que
+crear un nuevo controlador que extraiga la información de la base de
+datos y una nueva vista que la presente.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">Una vez realizado
+habra que guardar esta funcionalidad en una nueva versión (commit).
+a continuación se desplegará la rama en heroku y se subirá a
+GitHub.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">Entrega en MiriadaX</p>
+<p style="margin-bottom: 0in; line-height: 100%">Subir un fichero de
+texto que contenga el <font color="#6666ff">URL donde ha desplegfado
+su práctica en Heroku, y el URL a la página de GitHub que aloja
+este desarrollo (con o sin la parte opcional)</font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">El plazo de entrega
+finaliza en 17-08-2015 22:59:00</p>
+</body>
+</html>
