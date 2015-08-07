@@ -12,12 +12,21 @@
 			</head>
 			<body>
 				<div>
-				<header class="main" id="h1"></header>
+				<header class="main" id="h1">
+					<% if(!session.user){ %>
+					<span class="right"><a href="/login">Login</a></span>
+					<%}else{%>
+					<span class="right"><%= session.user.username%> <a href="/logout">Logout</a></span>
+					<%}%>
+				</header>
 				<h2>Quiz: el juego de preguntas</h2>
 				<nav>
 					<span><a href="/">Inicio</a></span>
 					<span><a href="/quizes/question">Preguntas</a></span>
 					<span><a href="/author">Autores</a></span>
+					<span><a href="/quizes">Quizes</a></span>
+					<span><a href="/quizes/new">Crear pregunta</a></span>
+
 				</nav>
 				<section class="main" id="s1">
 					<%- body %>
