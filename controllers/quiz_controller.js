@@ -19,7 +19,7 @@ exports.answer = function (req, res){
 			res.render('quizes/answer', {respuesta: 'Incorrecto'});
 		}
 	})
-};
+}; 
 
 
 //@ch /quizes & /quizes/?search=..
@@ -27,7 +27,9 @@ exports.quiz = function(req, res) {
 	if (req.query.search == null) { //@ch I did not use a triple = 
         res.render('quizes/quiz');
 	}
-	else {
+	else { //@ch Yo lo hago con un quizes/answer?respuesta=Roma
+		//@ch TODO evidentemente falta un quizId: en router/index.js:
+		//				/quizes/:quizId(\\d+)/answer
 		models.Quiz.findAll({where: ["pregunta like ?", "%" + req.query.search + "%"]}).success(function(result) {
 			res.render('quizes/search', {encontrados: result});
 		});		

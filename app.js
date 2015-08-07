@@ -11,6 +11,9 @@ var routes = require('./routes/index');
 //@ch 
 var partials = require('express-partials'); 
 
+//@ch
+var session = require('express-session');
+
 var app = express();
 
 // view engine setup
@@ -23,11 +26,32 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-app.use(cookieParser());
+
+//app.use(cookieParser());
+app.use(cookieParser('MQuiz 2015')); //@ch texto semilla para cifrar cookie
+app.use(session());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 //@ch MW del paquete express-partials
 app.use(partials());
+
+
+// @ch Helpers dinámicos
+app.use(function (req, res, next){
+
+// Guarda ruta actual para redireccionar a esta después de hacer login
+if (!req.path.match(/\/login|\/logout/)){
+    req.session.redir = req.path;
+}
+
+// Copia sesión para que esté accesible desde req.session y res.locals.session
+res.locals.session = req.session;
+next();
+
+});
+
+
 
 app.use('/', routes);
 //@ch app.use('/users', users);
