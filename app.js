@@ -9,7 +9,7 @@ var routes = require('./routes/index');
 //@ch var users = require('./routes/users');
 
 //@ch 
-var partials = require('express-partials'); 
+var partials = require('express-partials');
 
 //@ch
 var session = require('express-session');
@@ -38,20 +38,32 @@ app.use(partials());
 
 
 // @ch Helpers dinámicos
-app.use(function (req, res, next){
+app.use(function(req, res, next) {
 
-// Guarda ruta actual para redireccionar a esta después de hacer login
-if (!req.path.match(/\/login|\/logout/)){
-    req.session.redir = req.path;
-}
+    // Guarda ruta actual para redireccionar a esta después de hacer login
+    if (!req.path.match(/\/login|\/logout/)) {
+        req.session.redir = req.path;
+    }
 
-// Copia sesión para que esté accesible desde req.session y res.locals.session
-res.locals.session = req.session;
-next();
+    // Copia sesión para que esté accesible desde req.session y res.locals.session
+    res.locals.session = req.session;
+    next();
 
 });
 
+//@ch Auto-logout after 2 minutes
+app.use(function(req, res, next) {
+    if (req.session.loginTime){
+        var logoutMiliseg = 2 * 60 * 1000; 
+        if (Date.now() - req.session.loginTime > logoutMiliseg) {
+            require('./controllers/session_controller').destroy(req, res);
+            //No funciona, bucle infinito: res.redirect('/logout');
 
+        }
+    }
+
+    next();
+});
 
 app.use('/', routes);
 //@ch app.use('/users', users);

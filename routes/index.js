@@ -10,6 +10,14 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz MiriadaX' });
 });
 
+
+
+
+
+
+
+
+
 // @ch Rutas de sesión
 router.get('/login', sessionController.new);
 router.post('/login', sessionController.create); // crea sesión

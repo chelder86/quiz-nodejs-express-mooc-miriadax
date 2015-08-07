@@ -20,6 +20,7 @@ exports.loginRequired = function(req, res, next) {
 exports.create = function(req, res) {
     var login = req.body.login;
     var password = req.body.password;
+    var date = new Date();
 
     var userController = require('./user_controller');
     userController.autenticar(login, password, function(error, user) {
@@ -37,6 +38,10 @@ exports.create = function(req, res) {
                 username: user.username
             };
 
+            //@ch Save when the user login at runtime
+            req.session.loginTime = Date.now().toString();
+            console.log("post timeOut: " + req.session.loginTime);
+
             res.redirect(req.session.redir.toString());
         }
 
@@ -45,6 +50,8 @@ exports.create = function(req, res) {
 
 // Delete /logout
 exports.destroy = function(req, res) {
+    console.log("estamos dentro de destroy quillo");
     delete req.session.user;
+    delete req.session.loginTime;
     res.redirect(req.session.redir.toString());
 };
