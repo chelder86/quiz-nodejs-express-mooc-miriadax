@@ -13,4 +13,20 @@ Para mi, lo mejor del curso son los ejercicios a lo largo de cada módulo. Si al
 
 Por otra parte, no estoy orgulloso de mis ejercicios (este repositorio son mis ejercicios). Los hice con prisa y faltan trozos. Por ello recomiendo mirar otros repositorios similares de otros compañeros como:
 
-- https://github.com/Danziger/quiz (sin finalizar a 7 de agosto del 2015)
+- https://github.com/sirdave75/quiz-sildavia
+- https://quiz-sildavia.herokuapp.com/
+
+- https://github.com/llaperez/quiz_M09
+- https://quiz-llaperez-m09.herokuapp.com/
+
+- https://github.com/git-user-bcn/quiz
+- https://quiz-dmonne-2015.herokuapp.com/
+
+- https://github.com/miriadaxdani/quiz-IV
+- https://quiziv-2015-dani.herokuapp.com/quizes/
+
+- https://github.com/epereda/kquiz
+- https://k-quiz.herokuapp.com/
+
+- https://github.com/siranda/jcarbajo-q2015
+- https://salty-tundra-3323.herokuapp.com
